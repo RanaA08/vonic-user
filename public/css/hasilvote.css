@@ -1,0 +1,409 @@
+/* === RESET & VARIABEL === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-blue: #1a73e8;
+    --dark-blue: #1557b0;
+    --bg-gray: #f7f9fc;
+    --text-dark: #333;
+    --text-gray: #666;
+    --border-color: #e0e0e0;
+    --info-bg: #e8f0fe;
+    --info-text: #1967d2;
+    --bg-light-blue: #3b82f6; /* Untuk label di kiri */
+}
+
+body {
+    background-color: var(--bg-gray);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: var(--text-dark);
+}
+
+/* === LAYOUT UTAMA === */
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* === SIDEBAR KIRI (SAMA SEPERTI SEBELUMNYA) === */
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.btn-cancel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.stepper {
+    background-color: var(--primary-blue);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.step-item {
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-item.active {
+    background-color: var(--dark-blue);
+}
+
+.step-item.active::before {
+    content: '✓';
+    font-weight: bold;
+}
+
+.info-box {
+    background-color: var(--info-bg);
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 12px;
+    color: var(--info-text);
+    display: flex;
+    gap: 10px;
+    line-height: 1.5;
+}
+
+.info-box i {
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* === KONTEN UTAMA (KANAN) === */
+.main-content {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.header-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.badge-step {
+    background-color: var(--info-bg);
+    color: var(--primary-blue);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.header-progress h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* === AREA RINGKASAN (Dashed Border) === */
+.summary-wrapper {
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.summary-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.summary-label {
+    width: 140px;
+    flex-shrink: 0;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.summary-value {
+    flex: 1;
+}
+
+.flex-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Pill Sederhana (Peserta) */
+.simple-pill {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Custom Radio (Disabled/Sekadar Visual) */
+.radio-custom {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: #e2e8f0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* === KARTU PAKET WISATA === */
+.card-paket {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 450px;
+}
+
+.card-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.text-blue {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.card-images {
+    display: flex;
+    height: 140px;
+    position: relative;
+}
+
+.card-images img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.more-images {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    /* Menempatkan +2 di atas gambar kedua */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+}
+/* Trik agar +2 hanya menutupi gambar kanan */
+.card-images img:nth-child(2) { position: relative; z-index: 1; }
+.more-images { z-index: 2; width: 50%; }
+
+.card-body {
+    padding: 15px;
+}
+
+.rating {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star {
+    color: #fbbf24;
+    font-size: 16px;
+}
+
+.review-count {
+    color: var(--primary-blue);
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: auto;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    font-size: 13px;
+}
+
+.info-label {
+    width: 110px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.info-desc {
+    color: var(--text-gray);
+    flex: 1;
+}
+
+.benefit-list {
+    list-style-type: disc;
+    padding-left: 15px;
+    color: var(--text-gray);
+    font-size: 13px;
+}
+
+.card-footer {
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 16px;
+}
+
+/* === KARTU KAOS === */
+.card-kaos {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 200px;
+}
+
+.kaos-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Pill Ukuran (XXL) */
+.size-pill {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background: white;
+}
+
+/* === TOMBOL NAVIGASI BAWAH === */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+
+.btn-nav {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.btn-nav:hover {
+    background-color: #f0f7ff;
+}
+
+/* Tombol Submit (Warna Gelap) */
+.btn-nav.submit {
+    background-color: #1557b0; /* Warna biru gelap sesuai gambar */
+    color: white;
+    border: none;
+}
+
+.btn-nav.submit:hover {
+    background-color: #0f458a;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .summary-row {
+        flex-direction: column;
+    }
+    .summary-label {
+        width: 100%;
+        text-align: left;
+    }
+    .flex-row {
+        flex-direction: column;
+    }
+    .card-paket, .card-kaos {
+        width: 100%;
+        max-width: 100%;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .summary-wrapper {
+        padding: 15px;
+    }
+}

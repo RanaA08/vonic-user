@@ -1,0 +1,242 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    height: 100px;
+    width: 100%;
+    padding-left: 15px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #2169ed;
+    margin-left: 25px;
+}
+
+
+/* DESKRIPSI */
+.question-box {
+    background: #f8f8f8;
+    padding: 13px 9px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 11px;
+}
+
+/* FILTER */
+.filter-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+.filter-container select {
+    height: 17px;
+    border: 1px solid #1264ff;
+    border-radius: 5px;
+    padding: 0 5px;
+    color: #1264ff;
+    background: white;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+/* GRID */
+.wisata-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* CARD */
+.wisata-card {
+    border: 1px solid #e1e1e1;
+    border-radius: 7px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* JUDUL CARD */
+.wisata-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+}
+
+.wisata-title input {
+    display: none;
+}
+
+.wisata-title a {
+    color: #1264ff;
+    font-weight: 600;
+}
+
+/* RADIO */
+.custom-radio {
+    width: 17px;
+    height: 17px;
+    background: #dedede;
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.wisata-title input:checked + .custom-radio {
+    background: #1264ff;
+    border: 4px solid #dce8ff;
+}
+
+/* GAMBAR */
+.wisata-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    height: 75px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.wisata-images > img {
+    width: 100%;
+    height: 75px;
+    object-fit: cover;
+}
+
+.image-more {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-more img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-more span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(150,150,150,0.75);
+    font-size: 10px;
+}
+
+/* DETAIL */
+.wisata-detail {
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.rating {
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.rating span {
+    color: #ffdc00;
+}
+
+.rating a {
+    margin-left: auto;
+    color: #1264ff;
+    text-decoration: none;
+}
+
+/* BARIS DETAIL */
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 8px;
+    line-height: 1.4;
+}
+
+.detail-row > span {
+    background: #e8f0ff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.detail-row p {
+    padding-top: 2px;
+}
+
+.detail-row ul {
+    padding-left: 14px;
+}
+
+/* HARGA */
+.price-button {
+    width: 100%;
+    height: 25px;
+    background: white;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.12);
+    color: #08408f;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.content-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn-previous,
+.btn-next {
+    height: 28px;
+    padding: 0 11px;
+    border: none;
+    border-radius: 7px;
+    background: white;
+    color: #1264ff;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.12);
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .wisata-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-container {
+        flex-wrap: wrap;
+    }
+
+    .content-card {
+        padding: 25px 15px;
+    }
+}
